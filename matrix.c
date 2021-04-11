@@ -86,6 +86,7 @@ struct matrix *generate_curve_coefs(double p0, double p1,
                                     double p2, double p3, int type)
 {
   struct matrix *n = new_matrix(4, 1);
+  ident(n);
   //hermite
   if (type == 0)
   {
