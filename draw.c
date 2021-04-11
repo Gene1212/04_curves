@@ -22,10 +22,10 @@ void add_circle(struct matrix *edges,
                 double cx, double cy, double cz,
                 double r, double step)
 {
-  int a;
-  int x;
-  int y;
-  for (a = 0; a < 1; a += step)
+  double a;
+  double x;
+  double y;
+  for (a = 0; a < 1; a = a + step)
   {
     x = r * cos(2 * PI * a) + cx;
     y = r * sin(2 * PI * a) + cy;
@@ -57,6 +57,12 @@ void add_curve(struct matrix *edges,
                double x3, double y3,
                double step, int type)
 {
+
+  struct matrix *a = generate_curve_coefs(x0, x1, x2, x3, type);
+  struct matrix *b = generate_curve_coefs(y0, y1, y2, y3, type);
+  print_matrix(a);
+  print_matrix(b);
+  
 }
 
 /*======== void add_point() ==========
