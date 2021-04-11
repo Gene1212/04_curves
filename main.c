@@ -33,4 +33,6 @@ int main(int argc, char **argv) {
   
   free_matrix( edges );
   free_matrix( transform );
+
+  return 0;
 }  
